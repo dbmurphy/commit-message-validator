@@ -1,11 +1,11 @@
 #!/bin/bash -e
 
-remote="$1"
-url="$2"
+#remote="$1"
+#url="$2"
 
 z40=0000000000000000000000000000000000000000
 
-while read local_ref local_sha remote_ref remote_sha
+while read local_sha remote_sha
 do
 	if [ "$local_sha" = $z40 ]
 	then

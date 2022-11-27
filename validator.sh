@@ -136,7 +136,7 @@ validate_overall_structure() {
 validate_header() {
   local HEADER="$1"
 
-  if [[ ! -z "${COMMIT_VALIDATOR_ALLOW_TEMP:-}" && $HEADER =~ $TEMP_HEADER_PATTERN ]]; then
+  if [[ -n  "${COMMIT_VALIDATOR_ALLOW_TEMP:-}" && $HEADER =~ $TEMP_HEADER_PATTERN ]]; then
      GLOBAL_TYPE="temp"
   elif [[ $HEADER =~ $REVERT_HEADER_PATTERN ]]; then
      GLOBAL_TYPE="revert"
@@ -192,14 +192,14 @@ validate_body_length() {
   while IFS= read -r LINE ;
   do
     # Skip lines with no spaces as they can't be split
-    $(echo -n "$LINE" | grep -q "\s") || continue
+    echo -n "$LINE" | grep -q "\s" || continue
 
     local LENGTH
 
     LENGTH="$(echo -n "$LINE" | wc -c)"
 
     if [[ $LENGTH -gt 100 ]]; then
-        echo -e "body message line length is more than 100 charaters"
+        echo -e "body message line length is more than 100 characters"
         exit $ERROR_BODY_LENGTH
     fi
   done <<< "$BODY"
@@ -221,7 +221,7 @@ validate_trailing_space() {
 need_jira() {
   local TYPE=$1
 
-  if [[ ! -z "${COMMIT_VALIDATOR_NO_JIRA:-}" ]]; then
+  if [[ -n "${COMMIT_VALIDATOR_NO_JIRA:-}" ]]; then
     return 1
   else
     for type in ${GLOBAL_JIRA_TYPES}; do
@@ -260,7 +260,7 @@ validate_revert() {
   local LINE=""
   local REVERTED_COMMIT=""
 
-  if [[ ! -z "${COMMIT_VALIDATOR_NO_REVERT_SHA1:-}" ]]; then
+  if [[ -n "${COMMIT_VALIDATOR_NO_REVERT_SHA1:-}" ]]; then
     exit 0
   fi
 

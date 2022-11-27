@@ -1,5 +1,5 @@
 ---
-name: 'Commit message validator (reduex)'
+name: 'Commit message validator (re-duex)'
 description: >
   Enforce angular commit message convention with minimal dependency only git and bash. Forks from Sébastien Boulle
 author: 'David Murphy'

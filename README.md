@@ -10,16 +10,20 @@
 
 <!-- PROJECT LOGO -->
 <!-- markdownlint-disable no-inline-html -->
+<!--suppress HtmlDeprecatedAttribute -->
 <br />
+<!--suppress HtmlDeprecatedAttribute -->
 <p align="center">
   <a href="https://github.com/dbmurphy/commit-message-validator">
-    <img src="images/stamp.png" alt="Logo" width="80" height="80">
+    <!--suppress CheckImageSize -->
+<img src="images/stamp.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Commit message validator</h3>
 
-  <p align="center">
-    Enforce angular commit message convention with minimal dependancy only
+  <!--suppress HtmlDeprecatedAttribute -->
+<p align="center">
+    Enforce angular commit message convention with minimal dependency only
     git and bash.
     <br />
     <a href="https://github.com/dbmurphy/commit-message-validator">
@@ -35,7 +39,6 @@
       Request Feature
     </a>
   </p>
-</p>
 <!-- markdownlint-enable no-inline-html -->
 
 <!-- TABLE OF CONTENTS -->
@@ -44,7 +47,7 @@
 
 - [About the Project](#about-the-project)
   - [Built With](#built-with)
-- [Getting Started](#getting-started)
+- [Getting Started](#)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
@@ -77,13 +80,13 @@ a **subject**:
 ```
 
 - The first line of the commit message (the "Subject") should not be longer
-  than 70 characters. However the limit is set to 100 characters to allow to
+  than 70 characters. However, the limit is set to 100 characters to allow to
   exceed the 70 characters when it's really needed.
 - Any other line of the commit message cannot be longer 100 characters!
 - The body and footer are optional, but depends on the type, information can be
    mandatory.
 
-This allows the message to be easier to read on github as well as in various
+This allows the message to be easier to read on GitHub as well as in various
 git tools.
 
 ### Type
@@ -95,7 +98,7 @@ Must be one of the following:
 - **docs**: Documentation only changes
 - **lint**: Changes that do not affect the meaning of the code (white-space,
   formatting, missing semicolons, etc)
-- **refactor**: A code change that neither fixes a bug or adds a feature
+- **refactor**: A code change that neither fixes a bug nor adds a feature
 - **test**: Adding missing tests or correcting existing tests
 - **chore**: Changes to the build process or auxiliary tools and libraries such
   as distribution generation
@@ -109,8 +112,8 @@ The scope must be written in
 
 ### Subject
 
-A brief but meaningfull description of the change.
-Here are recommandations for writing your subject:
+A brief but meaningful description of the change.
+Here are recommendations for writing your subject:
 
 - use the imperative, present tense: "change" not "changed" nor "changes"
 - don't capitalize first letter
@@ -157,7 +160,7 @@ revert: feat(toto-service): provide toto for all
 This reverts commit <sha1>.
 ```
 
-However, the default git behavior, that cannot be easily overiden is:
+However, the default git behavior, that cannot be easily overridden is:
 
 ```Markdown
 Revert "feat(toto-service): provide toto for all"
@@ -165,7 +168,7 @@ Revert "feat(toto-service): provide toto for all"
 This reverts commit <sha1>.
 ```
 
-Thus we won't enforce one or the other, we will only enfore:
+Thus, we won't enforce one or the other, we will only enforce:
 
 - starting the commit title with revert (with a capitalized letter or not)
 - having the sentence "This reverts commit \<sha1\>"
@@ -203,7 +206,7 @@ To get a local copy up and running follow these steps.
    git clone https://github.com/dbmurphy/commit-message-validator.git
    ```
 
-That's all, your ready to go !
+That's all, you're ready to go !
 
 <!-- USAGE EXAMPLES -->
 
@@ -250,7 +253,7 @@ For that, you have to add the following lines in your repository's gitconfig
     template = /path/to/git-commit-template
 ```
 
-## Getting started with github action
+## Getting started with GitHub action
 
 To enable the action simply create the
 .github/workflows/commit-message-validator.yml file with the following content:
@@ -274,7 +277,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-### Github Action option
+### GitHub Action option
 
 - if `no_jira` is not empty, no validation is done on JIRA refs.
 - if `allow_temp` is not empty, no validation is done on `fixup!`
@@ -347,7 +350,7 @@ for a list of proposed features (and known issues).
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be
-learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+learned, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)

@@ -5,8 +5,9 @@ set -eu
 OPTIONS=$(getopt --longoptions no-jira,allow-temp,jira-in-header,header-length:,jira-types: --options "" -- "$@")
 unset COMMIT_VALIDATOR_ALLOW_TEMP COMMIT_VALIDATOR_NO_JIRA COMMIT_VALIDATOR_NO_REVERT_SHA1 GLOBAL_JIRA_IN_HEADER GLOBAL_MAX_LENGTH GLOBAL_JIRA_TYPES
 
-eval set -- $OPTIONS
+eval set -- "$OPTIONS"
 while true; do
+  # shellcheck disable=SC2034
   case "$1" in
     --no-jira ) COMMIT_VALIDATOR_NO_JIRA=1; shift ;;
     --allow-temp ) COMMIT_VALIDATOR_ALLOW_TEMP=1; shift ;;
